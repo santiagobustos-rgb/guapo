@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Santiago Alejandro Tits Towers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:    #F5F0E8;
+    --paper:    #FDFAF4;
+    --ink:      #1A1714;
+    --ink-mid:  #3D3830;
+    --ink-soft: #7A7268;
+    --rose:     #C4856A;
+    --rose-lt:  #E8C5B5;
+    --sage:     #7A9E87;
+    --sage-lt:  #C8DDD0;
+    --gold:     #B89A6A;
+    --rule:     #D4CABC;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; margin: 0; border-radius: 0; }
+  }
+
+  body {
+    background: #E8E3D9;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink);
+    padding: 40px 20px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    background: var(--paper);
+    max-width: 820px;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 8px 60px rgba(0,0,0,0.18);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 56px 64px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 320px; height: 100%;
+    background: linear-gradient(135deg, transparent 40%, rgba(196,133,106,0.12) 100%);
+    pointer-events: none;
+  }
+
+  .header-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+  }
+
+  .name-block {}
+
+  .name-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .name-eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--rose);
+    opacity: 0.4;
+    max-width: 80px;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    margin-bottom: 18px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--rose-lt);
+  }
+
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(245,240,232,0.6);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+  }
+
+  .header-meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+    padding-bottom: 4px;
+  }
+
+  .meta-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: rgba(245,240,232,0.5);
+    text-transform: uppercase;
+  }
+
+  .meta-badge {
+    background: var(--rose);
+    color: var(--cream);
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
+  }
+
+  /* ── ACCENT BAR ── */
+  .accent-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--rose) 0%, var(--gold) 50%, var(--sage) 100%);
+  }
+
+  /* ── BODY ── */
+  .body {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--cream);
+    padding: 48px 32px;
+    border-right: 0.5px solid var(--rule);
+  }
+
+  .sidebar-section {
+    margin-bottom: 36px;
+  }
+  .sidebar-section:last-child { margin-bottom: 0; }
+
+  .sidebar-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid var(--rose-lt);
+  }
+
+  .skill-group { margin-bottom: 14px; }
+
+  .skill-group-name {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--ink-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+
+  .skill-item {
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .skill-pill {
+    display: inline-block;
+    background: var(--sage-lt);
+    color: var(--ink-mid);
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 3px 9px;
+    border-radius: 2px;
+    margin: 2px 2px 2px 0;
+    letter-spacing: 0.05em;
+  }
+
+  .skill-pill.rose {
+    background: var(--rose-lt);
+  }
+
+  .contact-item {
+    font-size: 11px;
+    color: var(--ink-soft);
+    line-height: 2;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .contact-item strong {
+    color: var(--ink-mid);
+    font-weight: 500;
+    min-width: 14px;
+  }
+
+  .alert-box {
+    background: rgba(196,133,106,0.08);
+    border: 0.5px solid var(--rose-lt);
+    border-left: 2px solid var(--rose);
+    border-radius: 2px;
+    padding: 10px 12px;
+    font-size: 10.5px;
+    color: var(--ink-mid);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    padding: 48px 48px 48px 44px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 36px;
+  }
+  .section:last-child { margin-bottom: 0; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 0.5px;
+    background: var(--rule);
+  }
+
+  /* ── TIMELINE ENTRY ── */
+  .entry {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 0 20px;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-line {
+    background: var(--sage);
+    border-radius: 2px;
+    position: relative;
+  }
+  .entry-line::before {
+    content: '';
+    position: absolute;
+    top: 4px; left: 50%;
+    transform: translateX(-50%);
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--sage);
+    border: 2px solid var(--paper);
+    box-shadow: 0 0 0 0.5px var(--sage);
+  }
+
+  .entry-content {}
+
+  .entry-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+
+  .entry-org {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--rose);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .entry-period {
+    font-size: 10px;
+    color: var(--ink-soft);
+    display: inline-block;
+    margin-bottom: 8px;
+    background: var(--cream);
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  .entry-desc {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .bullet-list {
+    list-style: none;
+    margin-top: 6px;
+  }
+  .bullet-list li {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    padding: 3px 0 3px 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .bullet-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 300;
+  }
+
+  /* ── PERFIL ── */
+  .perfil-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    font-style: italic;
+    border-left: 2px solid var(--rose);
+    padding-left: 18px;
+    margin-bottom: 0;
+  }
+
+  /* ── INCIDENTE ── */
+  .incidente {
+    background: var(--cream);
+    border: 0.5px solid var(--rule);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+  }
+  .incidente:last-child { margin-bottom: 0; }
+
+  .incidente-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 6px;
+  }
+
+  .incidente-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .incidente-text {
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--ink);
+    padding: 18px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+  }
+
+  .footer-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--rose);
+    opacity: 0.6;
+  }
+
+  /* ── DATO CURIOSO ── */
+  .dato {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .dato:last-child { margin-bottom: 0; }
+
+  .dato-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 0.5px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .dato-content {}
+
+  .dato-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3px;
+  }
+
+  .dato-text {
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-grid">
+      <div class="name-block">
+        <div class="name-eyebrow">Curriculum Vitae &nbsp;·&nbsp; Confidencial</div>
+        <h1>Santiago<br><em>Alejandro</em><br>Tits Towers</h1>
+        <p class="tagline">Especialista en Ciberseguridad Ofensiva &amp; Estética Avanzada</p>
+      </div>
+      <div class="header-meta">
+        <span class="meta-badge">Disponible</span>
+        <span class="meta-item">Mexicali, B.C.</span>
+        <span class="meta-item">19 años</span>
+        <span class="meta-item">Confundido con H. Styles</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="accent-bar"></div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Contacto</div>
+        <div class="contact-item"><strong>📍</strong> Mexicali, Baja California</div>
+        <div class="contact-item"><strong>🌡</strong> Opera a 55°C sin frizz</div>
+        <div class="contact-item"><strong>🎸</strong> Fan de Fine Line (Oficial)</div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Hacking &amp; Código</div>
+        <div class="skill-group">
+          <div class="skill-group-name">Lenguajes</div>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">C++</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">Wi-Fi</span>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Vectores de Ataque</div>
+          <span class="skill-pill">SQL Injection</span>
+          <span class="skill-pill">Zero-Day</span>
+          <span class="skill-pill">Bypass Biométrico</span>
+          <span class="skill-pill rose">Ingeniería Social</span>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Tiempo de Respuesta</div>
+          <div class="skill-item">Restauración de sistema crítico: <strong style="color:var(--ink-mid)">5 min</strong></div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Estética Aplicada</div>
+        <div class="skill-group">
+          <div class="skill-group-name">Especialidades</div>
+          <span class="skill-pill rose">Shag Haircut</span>
+          <span class="skill-pill rose">Anillos Múltiples</span>
+          <span class="skill-pill rose">Paleta Pastel</span>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Colección Personal</div>
+          <div class="skill-item">42 bufandas de plumas<br><span style="font-size:10px;color:var(--ink-soft)">(uso en interiores a 16°C)</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Soft Skills</div>
+        <div class="skill-item" style="margin-bottom:6px">✦ Resiliencia térmica extrema</div>
+        <div class="skill-item" style="margin-bottom:6px">✦ Diagnóstico astrológico musical</div>
+        <div class="skill-item" style="margin-bottom:6px">✦ Gestión de crisis de identidad de fans</div>
+        <div class="skill-item">✦ Filantropía digital para adultos mayores</div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Nota de Seguridad</div>
+        <div class="alert-box">
+          Actualmente bajo protección de seguridad privada debido al fenómeno conocido como <em>"El Efecto Harry"</em>, que provoca detención espontánea del tráfico en Av. Justo Sierra.
+        </div>
+      </div>
+
+    </div><!-- /sidebar -->
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- PERFIL -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Perfil Profesional</h2>
+          <div class="section-rule"></div>
+        </div>
+        <p class="perfil-text">
+          Científico computacional y experto en seguridad digital con una capacidad innata para comprometer sistemas complejos y corazones por igual. Poseedor de una presencia visual disruptiva y una trayectoria académica acelerada. Combinación única de habilidades técnicas de alto nivel y un carisma natural que facilita la ingeniería social y las relaciones públicas.
+        </p>
+      </div>
+
+      <!-- FORMACIÓN -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Formación Académica</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-line"></div>
+          <div class="entry-content">
+            <div class="entry-title">Doctorado en Hacking Ético y Seguridad de la Información</div>
+            <div class="entry-org">Instituto Global de Tecnologías Disruptivas</div>
+            <div class="entry-desc">Formación en vectores de ataque de última generación, análisis forense digital y penetración de infraestructuras críticas con un GPA impecable —como el peinado.</div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-line"></div>
+          <div class="entry-content">
+            <div class="entry-title">Maestría en Estética Humana y Gestión de Carisma</div>
+            <div class="entry-org">Facultad Internacional de Presencia y Estilo · <em style="font-style:italic;color:var(--ink-soft)">Maestría en Guapo</em></div>
+            <div class="entry-desc">Programa interdisciplinar que fusiona psicología de la presencia, teoría del color aplicada al guardarropa y fundamentos del carisma disruptivo. Tesis: <em>"El Cardigan como Vector de Impacto Social"</em>.</div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-line"></div>
+          <div class="entry-content">
+            <div class="entry-title">Certificación en "Watermelon Sugar High"</div>
+            <div class="entry-org">Especialización en Vibras de Verano &amp; Manejo de Cardiganes</div>
+            <div class="entry-desc">Programa intensivo de 3 semanas con énfasis en gestión emocional de paletas pastel y selección musical por signo zodiacal.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERIENCIA -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Experiencia Profesional</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-line"></div>
+          <div class="entry-content">
+            <div class="entry-title">Consultor Independiente de Ciberseguridad</div>
+            <div class="entry-org">Freelance · Remoto &amp; Presencial</div>
+            <span class="entry-period">En curso</span>
+            <ul class="bullet-list">
+              <li>Penetración de sistemas de alta seguridad utilizando vulnerabilidades de día cero con tasa de éxito del 100%.</li>
+              <li>Optimización de arquitecturas de firewall manteniendo un peinado impecable bajo condiciones de presión extrema.</li>
+              <li>Restauración de estación de hackeo post-ataque biológico aviar dimensional en un tiempo récord de 5 minutos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-line"></div>
+          <div class="entry-content">
+            <div class="entry-title">Doble de Estilo &amp; Gestión de Crisis de Identidad Pública</div>
+            <div class="entry-org">Freelance · Mexicali — Hollywood</div>
+            <span class="entry-period">Permanente por causas de fuerza mayor</span>
+            <ul class="bullet-list">
+              <li>Gestión de fans en estado de confusión identitaria en plazas comerciales y corredores urbanos de Mexicali.</li>
+              <li>Modelaje de alta costura con enfoque en "vulnerabilidad masculina moderna" para marcas no especificadas por NDA.</li>
+              <li>Supervisión de seguridad privada ante el Efecto Harry en Av. Justo Sierra (incidentes: diarios).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-line"></div>
+          <div class="entry-content">
+            <div class="entry-title">Especialista en Filantropía Digital</div>
+            <div class="entry-org">Programa Comunitario · Mexicali</div>
+            <span class="entry-period">Voluntario</span>
+            <ul class="bullet-list">
+              <li>Configuración de cuentas de Facebook para adultos mayores con verificación de fidelidad conyugal incluida.</li>
+              <li>Primer hackeo exitoso de red Wi-Fi vecinal a los 8 años de edad por restricciones de acceso a Roblox.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- DATOS CURIOSOS -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Datos Notables &amp; Eventos Paranormales</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="incidente">
+          <div class="incidente-badge">📁 Expediente Clasificado #001</div>
+          <div class="incidente-title">El Incidente de la Paloma Espacial</div>
+          <div class="incidente-text">La estación de hackeo fue víctima de un ataque biológico orquestado —una paloma de origen interdimensional (ADN confirmado mediante análisis forense propio) depositó material biológico a través de una apertura de origen desconocido en el techo. El sistema fue restaurado en 5 minutos. Los competidores celosos no han sido identificados, pero se monitorean.</div>
+        </div>
+
+        <div class="incidente">
+          <div class="incidente-badge">📁 Expediente Clasificado #002</div>
+          <div class="incidente-title">Tolerancia Gastronómica Extrema</div>
+          <div class="incidente-text">Capacidad documentada de consumir 117 rebanadas de pizza con 3 litros de leche entera a mediodía del 13 de agosto sin visita al baño posterior. Atribuido directamente a la Maestría en Guapo. Reproducible bajo condiciones controladas.</div>
+        </div>
+
+        <div class="dato">
+          <div class="dato-icon">♈</div>
+          <div class="dato-content">
+            <div class="dato-label">Habilidad Oculta Certificada</div>
+            <div class="dato-text">Diagnóstico musical preciso: determina qué canción del álbum <em>Fine Line</em> necesitas escuchar basándose únicamente en tu signo zodiacal. Efectividad: 100% (autoinforme).</div>
+          </div>
+        </div>
+
+        <div class="dato">
+          <div class="dato-icon">🧣</div>
+          <div class="dato-content">
+            <div class="dato-label">Coleccionismo de Alto Nivel</div>
+            <div class="dato-text">Colección activa de 42 bufandas de plumas. Uso en interiores con aire acondicionado a 16°C exclusivamente. Disponibles para inspección bajo cita previa.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /main -->
+  </div><!-- /body -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span class="footer-text">Santiago A. Tits Towers · CV Confidencial</span>
+    <div class="footer-dot"></div>
+    <span class="footer-text">Mexicali, Baja California · 2025</span>
+    <div class="footer-dot"></div>
+    <span class="footer-text">Disponible previo contrato de seguridad</span>
+  </div>
+
+</div>
+</body>
+</html>
